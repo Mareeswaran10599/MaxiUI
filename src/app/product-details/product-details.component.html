@@ -1,0 +1,31 @@
+<div class="card-top container-fluid">
+    <div classs="container d-flex">
+        <table>
+            <tr>
+                <td *ngFor="let item of categories">
+                    <div class="item">
+                        <a>
+                            <img src="{{item.imageUrl}}" alt="" width="100px"/>
+                                
+                            <h6>{{item.name}}</h6>
+                        </a>
+                    </div>
+                </td>
+        
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of products">    
+            <div class="card col-md-3">
+                <img  src="{{item.imageUrl}}" class="card-img-top img-responsive"/>
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.brand}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" >Add to cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

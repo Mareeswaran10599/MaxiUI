@@ -1,0 +1,22 @@
+<!-- <button (click)="logout()" class="btn btn-danger">Log out</button> -->
+<!-- 
+<p>dashboard works!</p>
+
+<ul *ngFor="let user of users">
+    <li>{{user.userName}}</li>
+</ul> -->
+<!-- sidebar.component.html -->
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <!-- Add more navigation links as needed -->
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-sidebar></app-sidebar>

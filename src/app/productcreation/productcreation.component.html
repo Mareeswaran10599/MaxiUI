@@ -1,0 +1,75 @@
+
+<div style="background-color:rgb(245, 242, 242);margin: 16px;">
+
+    <div style="background-color: white;padding: 16px;">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Product Creation</mat-card-title>
+                <mat-card-subtitle>Create Your new product and edit</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+               
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+
+                        <input matInput placeholder="Product Name" [(ngModel)]="productName" [disabled]="isDisabled">
+
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+
+                        <input matInput placeholder="Product Price" [(ngModel)]="productPrice" [disabled]="isDisabled">
+
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+
+                        <input matInput placeholder="Product Image URL" [(ngModel)]="productImageUrl" [disabled]="isDisabled">
+
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>CategoryName</mat-label>
+
+                        <mat-select [(ngModel)]="selectedValue" [disabled]="isDisabled">
+                            <mat-option *ngFor="let option of categories" [value]="option.id" (click)="onSelectOptionCategoryClick(option)">
+                                {{ option.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>BrandName</mat-label>
+
+                        <mat-select [(ngModel)]="selectedBrand" [disabled]="isDisabled">
+                            <mat-option *ngFor="let v of brands" [value]="v.id" (click)="onSelectOptionBrandClick(v)">
+                                {{ v.name }}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Specification</mat-label>
+
+                        <mat-select [(ngModel)]="selectedYear"                    
+                        [disabled]="isDisabled">
+                            <mat-option *ngFor="let year of publish" [value]="year.value" >
+                                {{ year.value }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+
+                <button mat-button style="background-color: red;width: 70px;"[disabled]="isDisabled">Cancel</button>
+
+                <button mat-button style="background-color: green;width: 70px;" (click)="productSave()" [disabled]="isDisabled">Save</button>
+
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+</div>

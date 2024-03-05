@@ -1,0 +1,32 @@
+<h2>ProductList</h2>
+<app-corner-button (click)="addItem()" class="add-item-button"><mat-icon>add</mat-icon></app-corner-button>
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>ImageUrl</th>
+            <th>Price</th>
+            <th>Action</th>
+            
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of productlist;let i = index">
+            <td>{{ v.name }}</td>
+            <td>{{ v.brand}}</td>
+            <td style="width: 70px;">{{ v.imageUrl}}</td>
+            <td>{{ v.price}}</td>
+            <td><button mat-icon-button (click)="editItem(v)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            <button mat-icon-button (click)="deleteProduct(v)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            <button mat-icon-button (click)="viewItem(v)">
+                    <mat-icon>visibility</mat-icon>
+                </button></td>
+        </tr>
+    </tbody>
+</table>
